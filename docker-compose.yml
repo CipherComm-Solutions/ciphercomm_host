@@ -12,7 +12,7 @@ services:
     restart: "unless-stopped"
   snikket_certs:
     container_name: snikket-certs
-    image: ciphercomm/ciphercomm_cert_manager:stable
+    image: ciphercomm/ciphercomm_cert_manager:latest
     env_file: snikket.conf
     network_mode: host
     volumes:
