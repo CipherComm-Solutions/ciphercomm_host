@@ -3,7 +3,7 @@ version: "3.3"
 services:
   snikket_proxy:
     container_name: snikket-proxy
-    image: snikket/snikket-web-proxy:beta
+    image: ciphercomm/ciphercomm_web_proxy:stable
     env_file: snikket.conf
     network_mode: host
     volumes:
@@ -12,7 +12,7 @@ services:
     restart: "unless-stopped"
   snikket_certs:
     container_name: snikket-certs
-    image: snikket/snikket-cert-manager:beta
+    image: ciphercomm/ciphercomm_cert_manager:stable
     env_file: snikket.conf
     network_mode: host
     volumes:
@@ -21,14 +21,14 @@ services:
     restart: "unless-stopped"
   snikket_portal:
     container_name: snikket-portal
-    image: snikket/snikket-web-portal:beta
+    image: ciphercomm/ciphercomm_web_portal:stable
     network_mode: host
     env_file: snikket.conf
     restart: "unless-stopped"
 
   snikket_server:
     container_name: snikket
-    image: snikket/snikket-server:beta
+    image: ciphercomm/ciphercomm_server:stable
     network_mode: host
     volumes:
       - snikket_data:/snikket
